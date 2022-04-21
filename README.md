@@ -1,2 +1,2 @@
 # data_structures_python
-Implementation of data structures in Python for learning
+Implementation of data structures and algorithms in Python for learning
