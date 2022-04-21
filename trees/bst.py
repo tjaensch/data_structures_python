@@ -60,6 +60,12 @@ class BinarySearchTree:
         while current_node.right is not None:
             current_node = current_node.right
         return current_node
+
+def addBT(root):  
+    if (root == None): 
+        return 0
+    return (root.value + addBT(root.left) + 
+                       addBT(root.right))  
             
         
 bst = BinarySearchTree()
@@ -69,10 +75,7 @@ bst.insert(10)
 bst.insert(3)
 bst.insert(4)
 
-print(bst.minimum())
-print(bst.min_value_node(bst.root).value)
-print(bst.min_value_node(bst.root.right).value)
-print(bst.maximum())
+print(addBT(bst.root))
 
 
     
