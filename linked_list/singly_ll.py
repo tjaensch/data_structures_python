@@ -48,47 +48,38 @@ class SLinkedList:
                 print(node.value)
                 node = node.next
     
-    def searchSLL(self, nodeValue):
-        if self.head is None:
-           return "The list does not exist"
-        else:
-            node = self.head
-            while node is not None:
-                if node.value == nodeValue:
-                    return node.value
-                node = node.next
-            return "The value does not exist in this list"
-    
-    def deleteNode(self, location):
+    def searchSLL(self, value):
         if self.head is None:
             print("The SLL does not exist")
         else:
-            if location == 0:
-                if self.head == self.tail:
-                    self.head = None
+            node = self.head
+            index = 0
+            while node is not None:
+                if node.value == value:
+                    print("The value is at index:", index)
+                    return node.value
+                node = node.next
+                index += 1
+            print("The value is not in the SLL")
+    
+    def deleteNode(self, value):
+        if self.head is None:
+            print("The SLL does not exist")
+        else:
+            node = self.head
+            if node.value == value:
+                self.head = node.next
+                if self.head is None:
                     self.tail = None
-                else:
-                    self.head = self.head.next
-            elif location == -1:
-                if self.head == self.tail:
-                    self.head = None
-                    self.tail = None
-                else:
-                    node = self.head
-                    while node is not None:
-                        if node.next == self.tail:
-                            break
-                        node = node.next
-                    node.next = None
-                    self.tail = node
             else:
-                tempNode = self.head
-                index = 0
-                while index < location - 1:
-                    tempNode = tempNode.next
-                    index += 1
-                nextNode = tempNode.next
-                tempNode.next = nextNode.next
+                while node is not None:
+                    if node.next.value == value:
+                        node.next = node.next.next
+                        if node.next is None:
+                            self.tail = node
+                        return
+                    node = node.next
+                print("The value is not in the SLL")
     
     def deleteEntireSLL(self):
         if self.head is None:
@@ -108,7 +99,15 @@ singlyLinkedList.insertSLL(0, 0)
 
 print([node.value for node in singlyLinkedList]) 
 
-print(singlyLinkedList.traverseSLL())
+#print(singlyLinkedList.traverseSLL())
+
+#print(singlyLinkedList.searchSLL(33))
+
+singlyLinkedList.deleteNode(5)
+singlyLinkedList.deleteNode(0)
+singlyLinkedList.deleteNode(3)
+
+print([node.value for node in singlyLinkedList]) 
 
 
 
