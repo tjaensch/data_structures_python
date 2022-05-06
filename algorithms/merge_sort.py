@@ -1,3 +1,7 @@
+#divide and conquer algorithm
+#divide input array into two halves and keep halving recursively until the array is sorted
+#time complexity: O(nlogn), space complexity: O(n)
+#use when you need stable sort, don't use when space is a concern
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2

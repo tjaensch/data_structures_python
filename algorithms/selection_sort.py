@@ -1,3 +1,4 @@
+# repeatedly find minimum element and move to sorted part of array, in place, performs well on small lists, space efficient
 def selection_sort(arr):
     for i in range(len(arr)):
         min_index = i

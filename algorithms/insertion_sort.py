@@ -1,3 +1,5 @@
+# divide array into two parts, take first element from unsorted array and find correct position in sorted array
+# space efficient, but not stable, useful when continuou inflow of numbers
 def insertion_sort(arr):
     # always start from the second element
     for i in range(1, len(arr)):

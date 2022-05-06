@@ -1,3 +1,4 @@
+# compare adjacent items until sorted
 def bubble_sort(arr):
     for i in range(len(arr)):
         for j in range(len(arr)-1-i):
